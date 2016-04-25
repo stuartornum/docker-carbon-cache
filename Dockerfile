@@ -4,7 +4,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install graphite-ca
 
 RUN echo "CARBON_CACHE_ENABLED=true" > /etc/default/graphite-carbon
 
-ENTRYPOINT ["/usr/bin/python", "/usr/bin/carbon-cache", "--debug", "--config=/etc/carbon/carbon.conf", "--pidfile=/tmp/carbon-cache.pid", "start"]
+ENTRYPOINT ["/usr/bin/python", "/usr/bin/carbon-cache", "--debug", "--config=/data/carbon/carbon.conf", "--pidfile=/tmp/carbon-cache.pid", "start"]
 USER _graphite
 EXPOSE 2003 2004
 
